@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Payment</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 450px;
+            width: 100%;
+        }
+
+        .card-container {
+            perspective: 1000px;
+            margin-bottom: 50px;
+            height: 250px;
+        }
+
+        .card {
+            width: 100%;
+            height: 250px;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+            cursor: pointer;
+        }
+
+        .card.flipped {
+            transform: rotateY(180deg);
+        }
+
+        .card-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-front {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+        }
+
+        .card-back {
+            background: linear-gradient(135deg, #2a5298 0%, #1e3c72 100%);
+            color: white;
+            transform: rotateY(180deg);
+        }
+
+        .card-chip {
+            width: 50px;
+            height: 40px;
+            background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+            border-radius: 5px;
+            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-chip::before {
+            content: '';
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            right: 5px;
+            bottom: 5px;
+            background: linear-gradient(135deg, #e6c200 0%, #f4d03f 100%);
+            border-radius: 3px;
+        }
+
+        .card-number {
+            font-size: 24px;
+            letter-spacing: 3px;
+            margin: 30px 0 20px 0;
+            font-weight: 500;
+        }
+
+        .card-details {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .card-holder, .card-expiry {
+            flex: 1;
+        }
+
+        .card-label {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.8;
+            margin-bottom: 5px;
+        }
+
+        .card-value {
+            font-size: 16px;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        .magnetic-strip {
+            width: 100%;
+            height: 50px;
+            background: #000;
+            margin: 20px 0;
+        }
+
+        .cvv-strip {
+            background: white;
+            height: 40px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding: 0 15px;
+            margin-top: 20px;
+        }
+
+        .cvv-value {
+            color: #000;
+            font-size: 18px;
+            letter-spacing: 2px;
+            font-weight: bold;
+        }
+
+        .form-container {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: slideUp 0.6s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 24px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            color: #555;
+            font-size: 14px;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.3s;
+            font-family: inherit;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .card-logo {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            font-size: 24px;
+            font-weight: bold;
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card-container">
+            <div class="card" id="card">
+                <div class="card-face card-front">
+                    <div class="card-logo">VISA</div>
+                    <div class="card-chip"></div>
+                    <div class="card-number" id="displayNumber">#### #### #### ####</div>
+                    <div class="card-details">
+                        <div class="card-holder">
+                            <div class="card-label">Card Holder</div>
+                            <div class="card-value" id="displayName">FULL NAME</div>
+                        </div>
+                        <div class="card-expiry">
+                            <div class="card-label">Expires</div>
+                            <div class="card-value" id="displayExpiry">MM/YY</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-face card-back">
+                    <div class="magnetic-strip"></div>
+                    <div class="cvv-strip">
+                        <div class="cvv-value" id="displayCVV">***</div>
+                    </div>
+                    <div style="margin-top: 20px; font-size: 12px; opacity: 0.8;">
+                        This card is property of the cardholder. Misuse is criminal offense.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-container">
+            <h2>Payment Details</h2>
+            <form id="cardForm">
+                <div class="form-group">
+                    <label for="cardNumber">Card Number</label>
+                    <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19">
+                </div>
+                <div class="form-group">
+                    <label for="cardName">Card Holder Name</label>
+                    <input type="text" id="cardName" placeholder="John Doe">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="expiry">Expiry Date</label>
+                        <input type="text" id="expiry" placeholder="MM/YY" maxlength="5">
+                    </div>
+                    <div class="form-group">
+                        <label for="cvv">CVV</label>
+                        <input type="text" id="cvv" placeholder="123" maxlength="3">
+                    </div>
+                </div>
+                <button type="submit">Complete Payment</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const card = document.getElementById('card');
+        const cardNumber = document.getElementById('cardNumber');
+        const cardName = document.getElementById('cardName');
+        const expiry = document.getElementById('expiry');
+        const cvv = document.getElementById('cvv');
+        const displayNumber = document.getElementById('displayNumber');
+        const displayName = document.getElementById('displayName');
+        const displayExpiry = document.getElementById('displayExpiry');
+        const displayCVV = document.getElementById('displayCVV');
+
+        // Card number formatting and display
+        cardNumber.addEventListener('input', (e) => {
+            let value = e.target.value.replace(/\s/g, '');
+            let formattedValue = value.match(/.{1,4}/g)?.join(' ') || value;
+            e.target.value = formattedValue;
+            
+            if (value.length > 0) {
+                // Show first 4 and last 4 digits, mask the middle
+                let maskedValue = '';
+                if (value.length <= 4) {
+                    maskedValue = value.padEnd(4, '#');
+                } else if (value.length <= 8) {
+                    maskedValue = value.slice(0, 4) + ' ' + '****';
+                } else if (value.length <= 12) {
+                    maskedValue = value.slice(0, 4) + ' **** ****';
+                } else {
+                    maskedValue = value.slice(0, 4) + ' **** **** ' + value.slice(12);
+                }
+                displayNumber.textContent = maskedValue;
+            } else {
+                displayNumber.textContent = '#### #### #### ####';
+            }
+        });
+
+        // Card name display
+        cardName.addEventListener('input', (e) => {
+            displayName.textContent = e.target.value.toUpperCase() || 'FULL NAME';
+        });
+
+        // Expiry date formatting and display
+        expiry.addEventListener('input', (e) => {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length >= 2) {
+                value = value.slice(0, 2) + '/' + value.slice(2, 4);
+            }
+            e.target.value = value;
+            displayExpiry.textContent = value || 'MM/YY';
+        });
+
+        // CVV - flip card when focused
+        cvv.addEventListener('focus', () => {
+            card.classList.add('flipped');
+        });
+
+        cvv.addEventListener('blur', () => {
+            card.classList.remove('flipped');
+        });
+
+        cvv.addEventListener('input', (e) => {
+            displayCVV.textContent = e.target.value || '***';
+        });
+
+        // Only allow numbers in card number and CVV
+        cardNumber.addEventListener('keypress', (e) => {
+            if (!/[0-9]/.test(e.key)) e.preventDefault();
+        });
+
+        cvv.addEventListener('keypress', (e) => {
+            if (!/[0-9]/.test(e.key)) e.preventDefault();
+        });
+
+        // Form submission
+        document.getElementById('cardForm').addEventListener('submit', (e)m => {
+            e.preventDefault();
+            alert('Payment processing... (Demo only)');
+        });
+    </script>
+</body>
+</html>
