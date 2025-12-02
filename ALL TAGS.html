@@ -1,0 +1,1292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Tags Reference Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgb(205, 205, 205);
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        h1 {
+            color: #667eea;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .category {
+            margin-bottom: 40px;
+            border-left: 4px solid #667eea;
+            padding-left: 20px;
+        }
+        
+        .category h2 {
+            color: #764ba2;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+        
+        .tag-item {
+            background: hwb(0 44% 56%);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid #e0e0e0;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .tag-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
+        }
+        
+        .tag-name {
+            background: #667eea;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 5px;
+            display: inline-block;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .tag-description {
+            color: #333;
+            margin: 10px 0;
+        }
+        .example {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+            margin: 10px 0;
+            font-size: 0.9em;
+        }
+        
+        .result {
+            background: #fff;
+            border: 2px solid #667eea;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        
+        .result-label {
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 5px;
+        }
+        
+        .nav {
+            background: #667eea;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: opacity 0.2s;
+        }
+        
+        .nav a:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📚 Complete HTML Tags Reference Guide</h1>
+        
+        <div class="nav">
+            <a href="#structure">Structure</a>
+            <a href="#text">Text</a>
+            <a href="#formatting">Formatting</a>
+            <a href="#links">Links & Media</a>
+            <a href="#lists">Lists</a>
+            <a href="#tables">Tables</a>
+            <a href="#forms">Forms</a>
+            <a href="#semantic">Semantic</a>
+        </div>
+
+        <!-- STRUCTURE TAGS -->
+        <div class="category" id="structure">
+            <h2>🏗️ Structure Tags</h2>
+            
+            <div class="tag-item">
+                <div class="tag-name">&lt;html&gt;</div>
+                <div class="tag-description">Root element of an HTML document. Contains all other HTML elements.</div>
+                <div class="example">&lt;html lang="en"&gt;<br>&nbsp;&nbsp;...content...<br>&lt;/html&gt;</div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;head&gt;</div>
+                <div class="tag-description">Contains metadata, title, links to CSS, and scripts that don't display on page.</div>
+                <div class="example">&lt;head&gt;<br>&nbsp;&nbsp;&lt;title&gt;My Page&lt;/title&gt;<br>&lt;/head&gt;</div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;body&gt;</div>
+                <div class="tag-description">Contains all visible content of the webpage.</div>
+                <div class="example">&lt;body&gt;<br>&nbsp;&nbsp;&lt;h1&gt;Welcome&lt;/h1&gt;<br>&lt;/body&gt;</div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;title&gt;</div>
+                <div class="tag-description">Defines the title shown in browser tab and search results.</div>
+                <div class="example">&lt;title&gt;My Awesome Website&lt;/title&gt;</div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;meta&gt;</div>
+                <div class="tag-description">Provides metadata like character encoding, viewport, description.</div>
+                <div class="example">&lt;meta charset="UTF-8"&gt;<br>&lt;meta name="description" content="My site"&gt;</div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;link&gt;</div>
+                <div class="tag-description">Links external resources like CSS files to your HTML.</div>
+                <div class="example">&lt;link rel="stylesheet" href="style.css"&gt;</div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;script&gt;</div>
+                <div class="tag-description">Embeds or references JavaScript code.</div>
+                <div class="example">&lt;script src="app.js"&gt;&lt;/script&gt;<br>&lt;script&gt;alert('Hello!');&lt;/script&gt;</div>
+            </div>
+        </div>
+
+        <!-- TEXT TAGS -->
+        <div class="category" id="text">
+            <h2>📝 Text & Heading Tags</h2>
+            
+            <div class="tag-item">
+                <div class="tag-name">&lt;h1&gt; to &lt;h6&gt;</div>
+                <div class="tag-description">Headings from largest (h1) to smallest (h6). h1 is most important.</div>
+                <div class="example">&lt;h1&gt;Main Title&lt;/h1&gt;<br>&lt;h2&gt;Subtitle&lt;/h2&gt;<br>&lt;h3&gt;Section&lt;/h3&gt;</div>
+                <div class="result">
+                    <div class="result-label">Result:</div>
+                    <h1 style="font-size: 2em;">Main Title</h1>
+                    <h2 style="font-size: 1.5em;">Subtitle</h2>
+                    <h3 style="font-size: 1.2em;">Section</h3>
+                </div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;p&gt;</div>
+                <div class="tag-description">Paragraph tag. Used for blocks of text.</div>
+                <div class="example">&lt;p&gt;This is a paragraph of text.&lt;/p&gt;</div>
+                <div class="result">
+                    <div class="result-label">Result:</div>
+                    <p>This is a paragraph of text.</p>
+                </div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;br&gt;</div>
+                <div class="tag-description">Line break. Creates a new line (self-closing tag).</div>
+                <div class="example">Line 1&lt;br&gt;Line 2</div>
+                <div class="result">
+                    <div class="result-label">Result:</div>
+                    Line 1<br>Line 2
+                </div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;hr&gt;</div>
+                <div class="tag-description">Horizontal rule. Creates a dividing line (self-closing).</div>
+                <div class="example">Above&lt;hr&gt;Below</div>
+                <div class="result">
+                    <div class="result-label">Result:</div>
+                    Above<hr>Below
+                </div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;pre&gt;</div>
+                <div class="tag-description">Preformatted text. Preserves spaces and line breaks.</div>
+                <div class="example">&lt;pre&gt;Text  with    spaces<br>  and breaks&lt;/pre&gt;</div>
+                <div class="result">
+                    <div class="result-label">Result:</div>
+                    <pre>Text  with    spaces
+  and breaks</pre>
+                </div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;blockquote&gt;</div>
+                <div class="tag-description">Indicates a section that is quoted from another source.</div>
+                <div class="example">&lt;blockquote&gt;"To be or not to be"&lt;/blockquote&gt;</div>
+                <div class="result">
+                    <div class="result-label">Result:</div>
+                    <blockquote>"To be or not to be"</blockquote>
+                </div>
+            </div>
+        </div>
+
+        <!-- FORMATTING TAGS -->
+        <div class="category" id="formatting">
+            <h2>✨ Text Formatting Tags</h2>
+            
+            <div class="tag-item">
+                <div class="tag-name">&lt;strong&gt;</div>
+                <div class="tag-description">Bold text with strong importance (semantic).</div>
+                <div class="example">&lt;strong&gt;Important text&lt;/strong&gt;</div>
+                <div class="result">
+                    <div class="result-label">Result:</div>
+                    <strong>Important text</strong>
+                </div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;b&gt;</div>
+                <div class="tag-description">Bold text (just visual, no semantic meaning).</div>
+                <div class="example">&lt;b&gt;Bold text&lt;/b&gt;</div>
+                <div class="result">
+                    <div class="result-label">Result:</div>
+                    <b>Bold text</b>
+                </div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;em&gt;</div>
+                <div class="tag-description">Emphasized text, usually italic (semantic importance).</div>
+                <div class="example">&lt;em&gt;Emphasized text&lt;/em&gt;</div>
+                <div class="result">
+                    <div class="result-label">Result:</div>
+                    <em>Emphasized text</em>
+                </div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;i&gt;</div>
+                <div class="tag-description">Italic text (just visual).</div>
+                <div class="example">&lt;i&gt;Italic text&lt;/i&gt;</div>
+                <div class="result">
+                    <div class="result-label">Result:</div>
+                    <i>Italic text</i>
+                </div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;u&gt;</div>
+                <div class="tag-description">Underlined text.</div>
+                <div class="example">&lt;u&gt;Underlined text&lt;/u&gt;</div>
+                <div class="result">
+                    <div class="result-label">Result:</div>
+                    <u>Underlined text</u>
+                </div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;mark&gt;</div>
+                <div class="tag-description">Highlighted text (usually yellow background).</div>
+                <div class="example">&lt;mark&gt;Highlighted text&lt;/mark&gt;</div>
+                <div class="result">
+                    <div class="result-label">Result:</div>
+                    <mark>Highlighted text</mark>
+                </div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;small&gt;</div>
+                <div class="tag-description">Smaller text size.</div>
+                <div class="example">&lt;small&gt;Small text&lt;/small&gt;</div>
+                <div class="result">
+                    <div class="result-label">Result:</div>
+                    <small>Small text</small>
+                </div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;del&gt;</div>
+                <div class="tag-description">Deleted text (strikethrough).</div>
+                <div class="example">&lt;del&gt;Deleted text&lt;/del&gt;</div>
+                <div class="result">
+                    <div class="result-label">Result:</div>
+                    <del>Deleted text</del>
+                </div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;ins&gt;</div>
+                <div class="tag-description">Inserted text (underlined).</div>
+                <div class="example">&lt;ins&gt;Inserted text&lt;/ins&gt;</div>
+                <div class="result">
+                    <div class="result-label">Result:</div>
+                    <ins>Inserted text</ins>
+                </div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;sub&gt;</div>
+                <div class="tag-description">Subscript text (lower and smaller).</div>
+                <div class="example">H&lt;sub&gt;2&lt;/sub&gt;O</div>
+                <div class="result">
+                    <div class="result-label">Result:</div>
+                    H<sub>2</sub>O
+                </div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;sup&gt;</div>
+                <div class="tag-description">Superscript text (higher and smaller).</div>
+                <div class="example">x&lt;sup&gt;2&lt;/sup&gt;</div>
+                <div class="result">
+                    <div class="result-label">Result:</div>
+                    x<sup>2</sup>
+                </div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;code&gt;</div>
+                <div class="tag-description">Inline code snippet.</div>
+                <div class="example">&lt;code&gt;console.log()&lt;/code&gt;</div>
+                <div class="result">
+                    <div class="result-label">Result:</div>
+                    <code>console.log()</code>
+                </div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;kbd&gt;</div>
+                <div class="tag-description">Keyboard input.</div>
+                <div class="example">Press &lt;kbd&gt;Ctrl&lt;/kbd&gt;+&lt;kbd&gt;C&lt;/kbd&gt;</div>
+                <div class="result">
+                    <div class="result-label">Result:</div>
+                    Press <kbd>Ctrl</kbd>+<kbd>C</kbd>
+                </div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;abbr&gt;</div>
+                <div class="tag-description">Abbreviation with title attribute for full form.</div>
+                <div class="example">&lt;abbr title="HyperText Markup Language"&gt;HTML&lt;/abbr&gt;</div>
+                <div class="result">
+                    <div class="result-label">Result:</div>
+                    <abbr title="HyperText Markup Language">HTML</abbr> (hover to see)
+                </div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;q&gt;</div>
+                <div class="tag-description">Short inline quotation (adds quotes automatically).</div>
+                <div class="example">&lt;p&gt;He said &lt;q&gt;Hello World&lt;/q&gt; to everyone.&lt;/p&gt;</div>
+                <div class="result">
+                    <div class="result-label">Result:</div>
+                    <p>He said <q>Hello World</q> to everyone.</p>
+                </div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;cite&gt;</div>
+                <div class="tag-description">Citation - reference to a creative work (book, movie, etc).</div>
+                <div class="example">&lt;p&gt;Read &lt;cite&gt;The Great Gatsby&lt;/cite&gt; by F. Scott Fitzgerald.&lt;/p&gt;</div>
+                <div class="result">
+                    <div class="result-label">Result:</div>
+                    <p>Read <cite>The Great Gatsby</cite> by F. Scott Fitzgerald.</p>
+                </div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;dfn&gt;</div>
+                <div class="tag-description">Definition term - indicates you're defining a term.</div>
+                <div class="example">&lt;p&gt;&lt;dfn&gt;HTML&lt;/dfn&gt; is a markup language.&lt;/p&gt;</div>
+                <div class="result">
+                    <div class="result-label">Result:</div>
+                    <p><dfn>HTML</dfn> is a markup language.</p>
+                </div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;samp&gt;</div>
+                <div class="tag-description">Sample output from a computer program.</div>
+                <div class="example">&lt;p&gt;Output: &lt;samp&gt;Error 404 - Not Found&lt;/samp&gt;&lt;/p&gt;</div>
+                <div class="result">
+                    <div class="result-label">Result:</div>
+                    <p>Output: <samp>Error 404 - Not Found</samp></p>
+                </div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;var&gt;</div>
+                <div class="tag-description">Represents a variable in mathematical or programming context.</div>
+                <div class="example">&lt;p&gt;The formula is &lt;var&gt;E&lt;/var&gt; = &lt;var&gt;mc&lt;/var&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/p&gt;</div>
+                <div class="result">
+                    <div class="result-label">Result:</div>
+                    <p>The formula is <var>E</var> = <var>mc</var><sup>2</sup></p>
+                </div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;s&gt;</div>
+                <div class="tag-description">Strikethrough text (for content no longer accurate/relevant).</div>
+                <div class="example">&lt;p&gt;&lt;s&gt;Was $50&lt;/s&gt; Now $30!&lt;/p&gt;</div>
+                <div class="result">
+                    <div class="result-label">Result:</div>
+                    <p><s>Was $50</s> Now $30!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- DEPRECATED STYLING TAGS -->
+        <div class="category">
+            <h2>🎨 Old Styling Tags (Deprecated but Educational)</h2>
+            <div style="background: #fff3cd; border: 2px solid #ffc107; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+                <strong>⚠️ Important Note:</strong> These tags are deprecated and should NOT be used in modern HTML. Use CSS instead! However, I'm showing them for educational purposes so you know what they were used for.
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;font&gt; ❌ DEPRECATED</div>
+                <div class="tag-description">Used to specify font face, size, and color. <strong>Use CSS instead!</strong></div>
+                <div class="example">
+                    &lt;!-- Old way (Don't use) --&gt;<br>
+                    &lt;font face="Arial" size="5" color="red"&gt;Text&lt;/font&gt;<br><br>
+                    &lt;!-- Modern CSS way (Use this) --&gt;<br>
+                    &lt;p style="font-family: Arial; font-size: 24px; color: red;"&gt;Text&lt;/p&gt;
+                </div>
+                <div class="result">
+                    <div class="result-label">Modern CSS Result:</div>
+                    <p style="font-family: Arial; font-size: 24px; color: red; margin: 0;">Text</p>
+                </div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;big&gt; ❌ DEPRECATED</div>
+                <div class="tag-description">Made text bigger. <strong>Use CSS font-size instead!</strong></div>
+                <div class="example">
+                    &lt;!-- Old way (Don't use) --&gt;<br>
+                    &lt;big&gt;Bigger text&lt;/big&gt;<br><br>
+                    &lt;!-- Modern CSS way (Use this) --&gt;<br>
+                    &lt;span style="font-size: 1.5em;"&gt;Bigger text&lt;/span&gt;
+                </div>
+                <div class="result">
+                    <div class="result-label">Modern CSS Result:</div>
+                    <span style="font-size: 1.5em;">Bigger text</span>
+                </div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;small&gt; ✅ STILL VALID</div>
+                <div class="tag-description">Makes text smaller. This tag is still valid in HTML5!</div>
+                <div class="example">&lt;p&gt;Regular text &lt;small&gt;smaller text&lt;/small&gt;&lt;/p&gt;</div>
+                <div class="result">
+                    <div class="result-label">Result:</div>
+                    <p style="margin: 0;">Regular text <small>smaller text</small></p>
+                </div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;tt&gt; ❌ DEPRECATED</div>
+                <div class="tag-description">Teletype text (monospace font). <strong>Use &lt;code&gt; or CSS instead!</strong></div>
+                <div class="example">
+                    &lt;!-- Old way (Don't use) --&gt;<br>
+                    &lt;tt&gt;Monospace text&lt;/tt&gt;<br><br>
+                    &lt;!-- Modern way (Use this) --&gt;<br>
+                    &lt;code&gt;Monospace text&lt;/code&gt;<br>
+                    &lt;!-- OR --&gt;<br>
+                    &lt;span style="font-family: monospace;"&gt;Monospace text&lt;/span&gt;
+                </div>
+                <div class="result">
+                    <div class="result-label">Modern Result:</div>
+                    <code>Monospace text</code>
+                </div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;center&gt; ❌ DEPRECATED</div>
+                <div class="tag-description">Centered content. <strong>Use CSS text-align instead!</strong></div>
+                <div class="example">
+                    &lt;!-- Old way (Don't use) --&gt;<br>
+                    &lt;center&gt;Centered text&lt;/center&gt;<br><br>
+                    &lt;!-- Modern CSS way (Use this) --&gt;<br>
+                    &lt;div style="text-align: center;"&gt;Centered text&lt;/div&gt;
+                </div>
+                <div class="result">
+                    <div class="result-label">Modern CSS Result:</div>
+                    <div style="text-align: center;">Centered text</div>
+                </div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;strike&gt; ❌ DEPRECATED</div>
+                <div class="tag-description">Strikethrough text. <strong>Use &lt;del&gt; or &lt;s&gt; instead!</strong></div>
+                <div class="example">
+                    &lt;!-- Old way (Don't use) --&gt;<br>
+                    &lt;strike&gt;Strikethrough&lt;/strike&gt;<br><br>
+                    &lt;!-- Modern way (Use this) --&gt;<br>
+                    &lt;del&gt;Strikethrough&lt;/del&gt; or &lt;s&gt;Strikethrough&lt;/s&gt;
+                </div>
+                <div class="result">
+                    <div class="result-label">Modern Result:</div>
+                    <del>Strikethrough</del>
+                </div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;basefont&gt; ❌ DEPRECATED</div>
+                <div class="tag-description">Set default font for entire page. <strong>Use CSS body styling instead!</strong></div>
+                <div class="example">
+                    &lt;!-- Old way (Don't use) --&gt;<br>
+                    &lt;basefont face="Arial" size="3" color="black"&gt;<br><br>
+                    &lt;!-- Modern CSS way (Use this) --&gt;<br>
+                    &lt;style&gt;<br>
+                    &nbsp;&nbsp;body {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;font-family: Arial, sans-serif;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;font-size: 16px;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;color: black;<br>
+                    &nbsp;&nbsp;}<br>
+                    &lt;/style&gt;
+                </div>
+            </div>
+        </div>
+
+        <!-- TEXT ALIGNMENT WITH CSS -->
+        <div class="category">
+            <h2>📐 Text Alignment (Modern CSS Way)</h2>
+            <div style="background: #d1ecf1; border: 2px solid #0c5460; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+                <strong>💡 Best Practice:</strong> Use CSS for all text alignment and styling. Here's how to do it properly!
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">Left Align (Default)</div>
+                <div class="tag-description">Text aligned to the left side.</div>
+                <div class="example">&lt;p style="text-align: left;"&gt;Left aligned text&lt;/p&gt;</div>
+                <div class="result">
+                    <div class="result-label">Result:</div>
+                    <p style="text-align: left; background: #f8f9fa; padding: 10px; margin: 0;">Left aligned text</p>
+                </div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">Center Align</div>
+                <div class="tag-description">Text aligned to the center.</div>
+                <div class="example">&lt;p style="text-align: center;"&gt;Center aligned text&lt;/p&gt;</div>
+                <div class="result">
+                    <div class="result-label">Result:</div>
+                    <p style="text-align: center; background: #f8f9fa; padding: 10px; margin: 0;">Center aligned text</p>
+                </div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">Right Align</div>
+                <div class="tag-description">Text aligned to the right side.</div>
+                <div class="example">&lt;p style="text-align: right;"&gt;Right aligned text&lt;/p&gt;</div>
+                <div class="result">
+                    <div class="result-label">Result:</div>
+                    <p style="text-align: right; background: #f8f9fa; padding: 10px; margin: 0;">Right aligned text</p>
+                </div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">Justify Align</div>
+                <div class="tag-description">Text stretched to align both left and right edges.</div>
+                <div class="example">&lt;p style="text-align: justify;"&gt;This is justified text that will stretch to fill the entire width of the container, creating straight edges on both sides.&lt;/p&gt;</div>
+                <div class="result">
+                    <div class="result-label">Result:</div>
+                    <p style="text-align: justify; background: #f8f9fa; padding: 10px; margin: 0;">This is justified text that will stretch to fill the entire width of the container, creating straight edges on both sides when the text is long enough.</p>
+                </div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">Font Families (CSS)</div>
+                <div class="tag-description">Different font families you can use with CSS.</div>
+                <div class="example">
+                    &lt;p style="font-family: Arial, sans-serif;"&gt;Arial Font&lt;/p&gt;<br>
+                    &lt;p style="font-family: 'Times New Roman', serif;"&gt;Times Font&lt;/p&gt;<br>
+                    &lt;p style="font-family: 'Courier New', monospace;"&gt;Courier Font&lt;/p&gt;<br>
+                    &lt;p style="font-family: Georgia, serif;"&gt;Georgia Font&lt;/p&gt;<br>
+                    &lt;p style="font-family: Verdana, sans-serif;"&gt;Verdana Font&lt;/p&gt;
+                </div>
+                <div class="result">
+                    <div class="result-label">Result:</div>
+                    <p style="font-family: Arial, sans-serif; margin: 5px 0;">Arial Font</p>
+                    <p style="font-family: 'Times New Roman', serif; margin: 5px 0;">Times New Roman Font</p>
+                    <p style="font-family: 'Courier New', monospace; margin: 5px 0;">Courier New Font</p>
+                    <p style="font-family: Georgia, serif; margin: 5px 0;">Georgia Font</p>
+                    <p style="font-family: Verdana, sans-serif; margin: 5px 0;">Verdana Font</p>
+                </div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">Font Sizes (CSS)</div>
+                <div class="tag-description">Different ways to set font size with CSS.</div>
+                <div class="example">
+                    &lt;p style="font-size: 12px;"&gt;12 pixels&lt;/p&gt;<br>
+                    &lt;p style="font-size: 16px;"&gt;16 pixels (default)&lt;/p&gt;<br>
+                    &lt;p style="font-size: 24px;"&gt;24 pixels&lt;/p&gt;<br>
+                    &lt;p style="font-size: 1em;"&gt;1em (relative)&lt;/p&gt;<br>
+                    &lt;p style="font-size: 1.5em;"&gt;1.5em (bigger)&lt;/p&gt;<br>
+                    &lt;p style="font-size: 0.8em;"&gt;0.8em (smaller)&lt;/p&gt;
+                </div>
+                <div class="result">
+                    <div class="result-label">Result:</div>
+                    <p style="font-size: 12px; margin: 5px 0;">12 pixels</p>
+                    <p style="font-size: 16px; margin: 5px 0;">16 pixels (default)</p>
+                    <p style="font-size: 24px; margin: 5px 0;">24 pixels</p>
+                    <p style="font-size: 1em; margin: 5px 0;">1em (relative)</p>
+                    <p style="font-size: 1.5em; margin: 5px 0;">1.5em (bigger)</p>
+                    <p style="font-size: 0.8em; margin: 5px 0;">0.8em (smaller)</p>
+                </div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">Font Colors (CSS)</div>
+                <div class="tag-description">Different ways to set text color with CSS.</div>
+                <div class="example">
+                    &lt;p style="color: red;"&gt;Red color&lt;/p&gt;<br>
+                    &lt;p style="color: #0000FF;"&gt;Blue (hex)&lt;/p&gt;<br>
+                    &lt;p style="color: rgb(0, 128, 0);"&gt;Green (RGB)&lt;/p&gt;<br>
+                    &lt;p style="color: rgba(255, 0, 0, 0.5);"&gt;Transparent red&lt;/p&gt;
+                </div>
+                <div class="result">
+                    <div class="result-label">Result:</div>
+                    <p style="color: red; margin: 5px 0;">Red color</p>
+                    <p style="color: #0000FF; margin: 5px 0;">Blue color (hex)</p>
+                    <p style="color: rgb(0, 128, 0); margin: 5px 0;">Green color (RGB)</p>
+                    <p style="color: rgba(255, 0, 0, 0.5); margin: 5px 0;">Transparent red (RGBA)</p>
+                </div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">Font Weight (CSS)</div>
+                <div class="tag-description">Control how bold or light the text appears.</div>
+                <div class="example">
+                    &lt;p style="font-weight: 300;"&gt;Light (300)&lt;/p&gt;<br>
+                    &lt;p style="font-weight: normal;"&gt;Normal (400)&lt;/p&gt;<br>
+                    &lt;p style="font-weight: bold;"&gt;Bold (700)&lt;/p&gt;<br>
+                    &lt;p style="font-weight: 900;"&gt;Extra Bold (900)&lt;/p&gt;
+                </div>
+                <div class="result">
+                    <div class="result-label">Result:</div>
+                    <p style="font-weight: 300; margin: 5px 0;">Light (300)</p>
+                    <p style="font-weight: normal; margin: 5px 0;">Normal (400)</p>
+                    <p style="font-weight: bold; margin: 5px 0;">Bold (700)</p>
+                    <p style="font-weight: 900; margin: 5px 0;">Extra Bold (900)</p>
+                </div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">Complete Font Styling Example</div>
+                <div class="tag-description">Combining multiple CSS font properties together.</div>
+                <div class="example">
+                    &lt;p style="<br>
+                    &nbsp;&nbsp;font-family: Georgia, serif;<br>
+                    &nbsp;&nbsp;font-size: 20px;<br>
+                    &nbsp;&nbsp;font-weight: bold;<br>
+                    &nbsp;&nbsp;color: #2c3e50;<br>
+                    &nbsp;&nbsp;text-align: center;<br>
+                    &nbsp;&nbsp;line-height: 1.6;<br>
+                    &nbsp;&nbsp;letter-spacing: 1px;<br>
+                    "&gt;<br>
+                    &nbsp;&nbsp;Beautifully Styled Text<br>
+                    &lt;/p&gt;
+                </div>
+                <div class="result">
+                    <div class="result-label">Result:</div>
+                    <p style="font-family: Georgia, serif; font-size: 20px; font-weight: bold; color: #2c3e50; text-align: center; line-height: 1.6; letter-spacing: 1px; background: #f8f9fa; padding: 15px; margin: 0;">Beautifully Styled Text</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- LINKS & MEDIA -->
+        <div class="category" id="links">
+            <h2>🔗 Links & Media Tags</h2>
+            
+            <div class="tag-item">
+                <div class="tag-name">&lt;a&gt;</div>
+                <div class="tag-description">Anchor tag. Creates hyperlinks to other pages or sections.</div>
+                <div class="example">&lt;a href="https://example.com"&gt;Visit Site&lt;/a&gt;<br>&lt;a href="#section"&gt;Jump to section&lt;/a&gt;</div>
+                <div class="result">
+                    <div class="result-label">Result:</div>
+                    <a href="https://example.com">Visit Site</a>
+                </div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;img&gt;</div>
+                <div class="tag-description">Embeds an image (self-closing). Always use alt attribute.</div>
+                <div class="example">&lt;img src="photo.jpg" alt="Description" width="200"&gt;</div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;video&gt;</div>
+                <div class="tag-description">Embeds video content with controls.</div>
+                <div class="example">&lt;video controls width="320"&gt;<br>&nbsp;&nbsp;&lt;source src="video.mp4" type="video/mp4"&gt;<br>&lt;/video&gt;</div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;audio&gt;</div>
+                <div class="tag-description">Embeds audio content with controls.</div>
+                <div class="example">&lt;audio controls&gt;<br>&nbsp;&nbsp;&lt;source src="audio.mp3" type="audio/mp3"&gt;<br>&lt;/audio&gt;</div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;iframe&gt;</div>
+                <div class="tag-description">Embeds another webpage or content inside current page.</div>
+                <div class="example">&lt;iframe src="page.html" width="500" height="300"&gt;&lt;/iframe&gt;</div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;svg&gt;</div>
+                <div class="tag-description">Container for SVG vector graphics.</div>
+                <div class="example">&lt;svg width="100" height="100"&gt;<br>&nbsp;&nbsp;&lt;circle cx="50" cy="50" r="40" fill="blue" /&gt;<br>&lt;/svg&gt;</div>
+                <div class="result">
+                    <div class="result-label">Result:</div>
+                    <svg width="100" height="100">
+                        <circle cx="50" cy="50" r="40" fill="blue" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- LISTS -->
+        <div class="category" id="lists">
+            <h2>📋 List Tags</h2>
+            
+            <div class="tag-item">
+                <div class="tag-name">&lt;ul&gt;</div>
+                <div class="tag-description">Unordered list (bullet points).</div>
+                <div class="example">&lt;ul&gt;<br>&nbsp;&nbsp;&lt;li&gt;Item 1&lt;/li&gt;<br>&nbsp;&nbsp;&lt;li&gt;Item 2&lt;/li&gt;<br>&lt;/ul&gt;</div>
+                <div class="result">
+                    <div class="result-label">Result:</div>
+                    <ul>
+                        <li>Item 1</li>
+                        <li>Item 2</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;ol&gt;</div>
+                <div class="tag-description">Ordered list (numbered).</div>
+                <div class="example">&lt;ol&gt;<br>&nbsp;&nbsp;&lt;li&gt;First&lt;/li&gt;<br>&nbsp;&nbsp;&lt;li&gt;Second&lt;/li&gt;<br>&lt;/ol&gt;</div>
+                <div class="result">
+                    <div class="result-label">Result:</div>
+                    <ol>
+                        <li>First</li>
+                        <li>Second</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;li&gt;</div>
+                <div class="tag-description">List item. Used inside ul or ol tags.</div>
+                <div class="example">&lt;li&gt;List item&lt;/li&gt;</div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;dl&gt;</div>
+                <div class="tag-description">Description list (term and definition pairs).</div>
+                <div class="example">&lt;dl&gt;<br>&nbsp;&nbsp;&lt;dt&gt;HTML&lt;/dt&gt;<br>&nbsp;&nbsp;&lt;dd&gt;Markup Language&lt;/dd&gt;<br>&lt;/dl&gt;</div>
+                <div class="result">
+                    <div class="result-label">Result:</div>
+                    <dl>
+                        <dt>HTML</dt>
+                        <dd>Markup Language</dd>
+                    </dl>
+                </div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;dt&gt;</div>
+                <div class="tag-description">Definition term in description list.</div>
+                <div class="example">&lt;dt&gt;Term&lt;/dt&gt;</div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;dd&gt;</div>
+                <div class="tag-description">Definition description in description list.</div>
+                <div class="example">&lt;dd&gt;Description&lt;/dd&gt;</div>
+            </div>
+        </div>
+
+        <!-- TABLES -->
+        <div class="category" id="tables">
+            <h2>📊 Table Tags</h2>
+            
+            <div class="tag-item">
+                <div class="tag-name">&lt;table&gt;</div>
+                <div class="tag-description">Creates a table.</div>
+                <div class="example">&lt;table&gt;<br>&nbsp;&nbsp;&lt;tr&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Cell&lt;/td&gt;<br>&nbsp;&nbsp;&lt;/tr&gt;<br>&lt;/table&gt;</div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;thead&gt;</div>
+                <div class="tag-description">Table header section.</div>
+                <div class="example">&lt;thead&gt;<br>&nbsp;&nbsp;&lt;tr&gt;&lt;th&gt;Header&lt;/th&gt;&lt;/tr&gt;<br>&lt;/thead&gt;</div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;tbody&gt;</div>
+                <div class="tag-description">Table body section (main content).</div>
+                <div class="example">&lt;tbody&gt;<br>&nbsp;&nbsp;&lt;tr&gt;&lt;td&gt;Data&lt;/td&gt;&lt;/tr&gt;<br>&lt;/tbody&gt;</div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;tfoot&gt;</div>
+                <div class="tag-description">Table footer section.</div>
+                <div class="example">&lt;tfoot&gt;<br>&nbsp;&nbsp;&lt;tr&gt;&lt;td&gt;Footer&lt;/td&gt;&lt;/tr&gt;<br>&lt;/tfoot&gt;</div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;tr&gt;</div>
+                <div class="tag-description">Table row.</div>
+                <div class="example">&lt;tr&gt;<br>&nbsp;&nbsp;&lt;td&gt;Cell 1&lt;/td&gt;<br>&nbsp;&nbsp;&lt;td&gt;Cell 2&lt;/td&gt;<br>&lt;/tr&gt;</div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;td&gt;</div>
+                <div class="tag-description">Table data cell.</div>
+                <div class="example">&lt;td&gt;Data&lt;/td&gt;</div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;th&gt;</div>
+                <div class="tag-description">Table header cell (bold and centered by default).</div>
+                <div class="example">&lt;th&gt;Header&lt;/th&gt;</div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">Full Table Example</div>
+                <div class="example">&lt;table border="1"&gt;<br>&nbsp;&nbsp;&lt;thead&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Name&lt;/th&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Age&lt;/th&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt;<br>&nbsp;&nbsp;&lt;/thead&gt;<br>&nbsp;&nbsp;&lt;tbody&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;John&lt;/td&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;25&lt;/td&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt;<br>&nbsp;&nbsp;&lt;/tbody&gt;<br>&lt;/table&gt;</div>
+                <div class="result">
+                    <div class="result-label">Result:</div>
+                    <table border="1" style="border-collapse: collapse;">
+                        <thead>
+                            <tr>
+                                <th style="padding: 5px;">Name</th>
+                                <th style="padding: 5px;">Age</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding: 5px;">John</td>
+                                <td style="padding: 5px;">25</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- FORMS -->
+        <div class="category" id="forms">
+            <h2>📝 Form Tags</h2>
+            
+            <div class="tag-item">
+                <div class="tag-name">&lt;form&gt;</div>
+                <div class="tag-description">Creates a form for user input.</div>
+                <div class="example">&lt;form action="/submit" method="POST"&gt;<br>&nbsp;&nbsp;...form elements...<br>&lt;/form&gt;</div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;input&gt;</div>
+                <div class="tag-description">Input field (many types: text, password, email, number, etc).</div>
+                <div class="example">&lt;input type="text" name="username" placeholder="Enter name"&gt;<br>&lt;input type="email" name="email"&gt;<br>&lt;input type="password" name="pass"&gt;</div>
+                <div class="result">
+                    <div class="result-label">Result:</div>
+                    <input type="text" placeholder="Enter name" style="margin: 5px;">
+                </div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;textarea&gt;</div>
+                <div class="tag-description">Multi-line text input.</div>
+                <div class="example">&lt;textarea rows="4" cols="50"&gt;Text here&lt;/textarea&gt;</div>
+                <div class="result">
+                    <div class="result-label">Result:</div>
+                    <textarea rows="4" cols="30">Text here</textarea>
+                </div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;button&gt;</div>
+                <div class="tag-description">Clickable button.</div>
+                <div class="example">&lt;button type="submit"&gt;Submit&lt;/button&gt;<br>&lt;button type="button"&gt;Click Me&lt;/button&gt;</div>
+                <div class="result">
+                    <div class="result-label">Result:</div>
+                    <button>Click Me</button>
+                </div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;select&gt;</div>
+                <div class="tag-description">Dropdown selection menu.</div>
+                <div class="example">&lt;select name="country"&gt;<br>&nbsp;&nbsp;&lt;option value="us"&gt;USA&lt;/option&gt;<br>&nbsp;&nbsp;&lt;option value="uk"&gt;UK&lt;/option&gt;<br>&lt;/select&gt;</div>
+                <div class="result">
+                    <div class="result-label">Result:</div>
+                    <select>
+                        <option>USA</option>
+                        <option>UK</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;option&gt;</div>
+                <div class="tag-description">Option inside a select dropdown.</div>
+                <div class="example">&lt;option value="red"&gt;Red&lt;/option&gt;</div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;label&gt;</div>
+                <div class="tag-description">Label for form elements (improves accessibility).</div>
+                <div class="example">&lt;label for="email"&gt;Email:&lt;/label&gt;<br>&lt;input type="email" id="email"&gt;</div>
+                <div class="result">
+                    <div class="result-label">Result:</div>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email">
+                </div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;fieldset&gt;</div>
+                <div class="tag-description">Groups related form elements together.</div>
+                <div class="example">&lt;fieldset&gt;<br>&nbsp;&nbsp;&lt;legend&gt;Personal Info&lt;/legend&gt;<br>&nbsp;&nbsp;...inputs...<br>&lt;/fieldset&gt;</div>
+                <div class="result">
+                    <div class="result-label">Result:</div>
+                    <fieldset>
+                        <legend>Personal Info</legend>
+                        Name: <input type="text">
+                    </fieldset>
+                </div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;legend&gt;</div>
+                <div class="tag-description">Caption/title for a fieldset.</div>
+                <div class="example">&lt;legend&gt;Contact Details&lt;/legend&gt;</div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">Input Types</div>
+                <div class="example">&lt;input type="checkbox"&gt; Checkbox<br>&lt;input type="radio"&gt; Radio button<br>&lt;input type="file"&gt; File upload<br>&lt;input type="date"&gt; Date picker<br>&lt;input type="color"&gt; Color picker<br>&lt;input type="range"&gt; Slider</div>
+                <div class="result">
+                    <div class="result-label">Result:</div>
+                    <input type="checkbox"> Checkbox<br>
+                    <input type="radio"> Radio button<br>
+                    <input type="file"><br>
+                    <input type="date"><br>
+                    <input type="color"><br>
+                    <input type="range">
+                </div>
+            </div>
+        </div>
+
+        <!-- SEMANTIC TAGS -->
+        <div class="category" id="semantic">
+            <h2>🎯 Semantic HTML5 Tags</h2>
+            
+            <div class="tag-item">
+                <div class="tag-name">&lt;header&gt;</div>
+                <div class="tag-description">Header section of page or section (logo, navigation, etc).</div>
+                <div class="example">&lt;header&gt;<br>&nbsp;&nbsp;&lt;h1&gt;Website Title&lt;/h1&gt;<br>&nbsp;&nbsp;&lt;nav&gt;...&lt;/nav&gt;<br>&lt;/header&gt;</div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;nav&gt;</div>
+                <div class="tag-description">Navigation links section.</div>
+                <div class="example">&lt;nav&gt;<br>&nbsp;&nbsp;&lt;a href="/"&gt;Home&lt;/a&gt;<br>&nbsp;&nbsp;&lt;a href="/about"&gt;About&lt;/a&gt;<br>&lt;/nav&gt;</div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;main&gt;</div>
+                <div class="tag-description">Main content of the page (only one per page).</div>
+                <div class="example">&lt;main&gt;<br>&nbsp;&nbsp;&lt;article&gt;...&lt;/article&gt;<br>&lt;/main&gt;</div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;section&gt;</div>
+                <div class="tag-description">Thematic grouping of content, usually with a heading.</div>
+                <div class="example">&lt;section&gt;<br>&nbsp;&nbsp;&lt;h2&gt;About Us&lt;/h2&gt;<br>&nbsp;&nbsp;&lt;p&gt;Content...&lt;/p&gt;<br>&lt;/section&gt;</div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;article&gt;</div>
+                <div class="tag-description">Self-contained content (blog post, news article, etc).</div>
+                <div class="example">&lt;article&gt;<br>&nbsp;&nbsp;&lt;h2&gt;Article Title&lt;/h2&gt;<br>&nbsp;&nbsp;&lt;p&gt;Article content...&lt;/p&gt;<br>&lt;/article&gt;</div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;aside&gt;</div>
+                <div class="tag-description">Sidebar content, related but separate from main content.</div>
+                <div class="example">&lt;aside&gt;<br>&nbsp;&nbsp;&lt;h3&gt;Related Links&lt;/h3&gt;<br>&nbsp;&nbsp;...&lt;/aside&gt;</div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;footer&gt;</div>
+                <div class="tag-description">Footer section of page or section (copyright, links, etc).</div>
+                <div class="example">&lt;footer&gt;<br>&nbsp;&nbsp;&lt;p&gt;&copy; 2025 Company&lt;/p&gt;<br>&lt;/footer&gt;</div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;figure&gt;</div>
+                <div class="tag-description">Self-contained content like images, diagrams, code snippets.</div>
+                <div class="example">&lt;figure&gt;<br>&nbsp;&nbsp;&lt;img src="chart.jpg" alt="Chart"&gt;<br>&nbsp;&nbsp;&lt;figcaption&gt;Sales Chart&lt;/figcaption&gt;<br>&lt;/figure&gt;</div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;figcaption&gt;</div>
+                <div class="tag-description">Caption for a figure element.</div>
+                <div class="example">&lt;figcaption&gt;Image caption&lt;/figcaption&gt;</div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;details&gt;</div>
+                <div class="tag-description">Expandable/collapsible content widget.</div>
+                <div class="example">&lt;details&gt;<br>&nbsp;&nbsp;&lt;summary&gt;Click to expand&lt;/summary&gt;<br>&nbsp;&nbsp;&lt;p&gt;Hidden content&lt;/p&gt;<br>&lt;/details&gt;</div>
+                <div class="result">
+                    <div class="result-label">Result:</div>
+                    <details>
+                        <summary>Click to expand</summary>
+                        <p>Hidden content revealed!</p>
+                    </details>
+                </div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;summary&gt;</div>
+                <div class="tag-description">Visible heading for details element.</div>
+                <div class="example">&lt;summary&gt;More Info&lt;/summary&gt;</div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;time&gt;</div>
+                <div class="tag-description">Represents a specific time or date.</div>
+                <div class="example">&lt;time datetime="2025-11-11"&gt;November 11, 2025&lt;/time&gt;</div>
+                <div class="result">
+                    <div class="result-label">Result:</div>
+                    <time datetime="2025-11-11">November 11, 2025</time>
+                </div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;progress&gt;</div>
+                <div class="tag-description">Progress bar indicator.</div>
+                <div class="example">&lt;progress value="70" max="100"&gt;70%&lt;/progress&gt;</div>
+                <div class="result">
+                    <div class="result-label">Result:</div>
+                    <progress value="70" max="100">70%</progress>
+                </div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;meter&gt;</div>
+                <div class="tag-description">Scalar measurement within a known range.</div>
+                <div class="example">&lt;meter value="6" min="0" max="10"&gt;6 out of 10&lt;/meter&gt;</div>
+                <div class="result">
+                    <div class="result-label">Result:</div>
+                    <meter value="6" min="0" max="10">6 out of 10</meter>
+                </div>
+            </div>
+        </div>
+
+        <!-- CONTAINER TAGS -->
+        <div class="category">
+            <h2>📦 Container Tags</h2>
+            
+            <div class="tag-item">
+                <div class="tag-name">&lt;div&gt;</div>
+                <div class="tag-description">Generic block-level container (division). Used for grouping and styling.</div>
+                <div class="example">&lt;div class="container"&gt;<br>&nbsp;&nbsp;&lt;p&gt;Content&lt;/p&gt;<br>&lt;/div&gt;</div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;span&gt;</div>
+                <div class="tag-description">Generic inline container. Used for styling parts of text.</div>
+                <div class="example">&lt;p&gt;This is &lt;span style="color:red"&gt;red&lt;/span&gt; text&lt;/p&gt;</div>
+                <div class="result">
+                    <div class="result-label">Result:</div>
+                    <p>This is <span style="color:red">red</span> text</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- MISC TAGS -->
+        <div class="category">
+            <h2>🔧 Miscellaneous Tags</h2>
+            
+            <div class="tag-item">
+                <div class="tag-name">&lt;!-- comment --&gt;</div>
+                <div class="tag-description">HTML comment (not visible on page).</div>
+                <div class="example">&lt;!-- This is a comment --&gt;</div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;style&gt;</div>
+                <div class="tag-description">Embeds CSS styles in the HTML document.</div>
+                <div class="example">&lt;style&gt;<br>&nbsp;&nbsp;p { color: blue; }<br>&lt;/style&gt;</div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;noscript&gt;</div>
+                <div class="tag-description">Content shown if JavaScript is disabled.</div>
+                <div class="example">&lt;noscript&gt;Please enable JavaScript&lt;/noscript&gt;</div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;canvas&gt;</div>
+                <div class="tag-description">Drawing area for graphics via JavaScript.</div>
+                <div class="example">&lt;canvas id="myCanvas" width="200" height="100"&gt;&lt;/canvas&gt;</div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;dialog&gt;</div>
+                <div class="tag-description">Dialog box or modal window.</div>
+                <div class="example">&lt;dialog open&gt;<br>&nbsp;&nbsp;&lt;p&gt;This is a dialog&lt;/p&gt;<br>&lt;/dialog&gt;</div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;embed&gt;</div>
+                <div class="tag-description">Embeds external content/plugins.</div>
+                <div class="example">&lt;embed src="file.pdf" width="500" height="600"&gt;</div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;object&gt;</div>
+                <div class="tag-description">Embeds external resources like PDFs, videos, etc.</div>
+                <div class="example">&lt;object data="file.pdf" type="application/pdf"&gt;&lt;/object&gt;</div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;param&gt;</div>
+                <div class="tag-description">Parameters for object element.</div>
+                <div class="example">&lt;param name="autoplay" value="true"&gt;</div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;map&gt;</div>
+                <div class="tag-description">Image map with clickable areas.</div>
+                <div class="example">&lt;map name="workmap"&gt;<br>&nbsp;&nbsp;&lt;area shape="rect" coords="34,44,270,350" href="page.html"&gt;<br>&lt;/map&gt;</div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;area&gt;</div>
+                <div class="tag-description">Clickable area inside an image map.</div>
+                <div class="example">&lt;area shape="circle" coords="100,100,50" href="link.html"&gt;</div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;base&gt;</div>
+                <div class="tag-description">Base URL for all relative URLs in document.</div>
+                <div class="example">&lt;base href="https://example.com/" target="_blank"&gt;</div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;wbr&gt;</div>
+                <div class="tag-description">Word break opportunity (suggests where line can break).</div>
+                <div class="example">VeryLongWord&lt;wbr&gt;CanBreakHere</div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;bdo&gt;</div>
+                <div class="tag-description">Bi-directional text override (change text direction).</div>
+                <div class="example">&lt;bdo dir="rtl"&gt;This text is right-to-left&lt;/bdo&gt;</div>
+                <div class="result">
+                    <div class="result-label">Result:</div>
+                    <bdo dir="rtl">This text is right-to-left</bdo>
+                </div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;ruby&gt;, &lt;rt&gt;, &lt;rp&gt;</div>
+                <div class="tag-description">Ruby annotations (for East Asian typography).</div>
+                <div class="example">&lt;ruby&gt;<br>&nbsp;&nbsp;漢 &lt;rt&gt;kan&lt;/rt&gt;<br>&lt;/ruby&gt;</div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;template&gt;</div>
+                <div class="tag-description">Holds HTML that won't be rendered until activated by JavaScript.</div>
+                <div class="example">&lt;template id="myTemplate"&gt;<br>&nbsp;&nbsp;&lt;p&gt;Template content&lt;/p&gt;<br>&lt;/template&gt;</div>
+            </div>
+
+            <div class="tag-item">
+                <div class="tag-name">&lt;slot&gt;</div>
+                <div class="tag-description">Placeholder inside web components.</div>
+                <div class="example">&lt;slot name="content"&gt;&lt;/slot&gt;</div>
+            </div>
+        </div>
+
+        <!-- DEPRECATED WARNING -->
+        <div class="category">
+            <h2>⚠️ Deprecated Tags (Don't Use These!)</h2>
+            
+            <div class="tag-item">
+                <div class="tag-description">These tags are outdated and should NOT be used in modern HTML. Use CSS instead for styling:</div>
+                <div class="example">
+                    &lt;center&gt; - Use CSS text-align: center<br>
+                    &lt;font&gt; - Use CSS font properties<br>
+                    &lt;marquee&gt; - Use CSS animations<br>
+                    &lt;blink&gt; - Use CSS animations<br>
+                    &lt;big&gt; - Use CSS font-size<br>
+                    &lt;strike&gt; - Use &lt;del&gt; or CSS text-decoration<br>
+                    &lt;tt&gt; - Use &lt;code&gt; or CSS font-family<br>
+                    &lt;frame&gt;, &lt;frameset&gt; - Use &lt;iframe&gt; or modern layouts
+                </div>
+            </div>
+        </div>
+
+        <!-- QUICK TIPS -->
+        <div class="category">
+            <h2>💡 Quick Tips for Beginners</h2>
+            
+            <div class="tag-item">
+                <div class="tag-description">
+                    <strong>1. Self-Closing Tags:</strong> Some tags don't need closing tags: &lt;br&gt;, &lt;hr&gt;, &lt;img&gt;, &lt;input&gt;, &lt;meta&gt;, &lt;link&gt;<br><br>
+                    
+                    <strong>2. Block vs Inline:</strong><br>
+                    • Block elements: Take full width, start on new line (&lt;div&gt;, &lt;p&gt;, &lt;h1&gt;)<br>
+                    • Inline elements: Take only needed space (&lt;span&gt;, &lt;a&gt;, &lt;strong&gt;)<br><br>
+                    
+                    <strong>3. Semantic HTML:</strong> Use meaningful tags (&lt;nav&gt;, &lt;article&gt;, &lt;header&gt;) instead of just &lt;div&gt; for better SEO and accessibility.<br><br>
+                    
+                    <strong>4. Always Include:</strong><br>
+                    • &lt;!DOCTYPE html&gt; at the very top<br>
+                    • lang attribute in &lt;html&gt; tag<br>
+                    • charset in &lt;meta&gt; tag<br>
+                    • alt attribute for &lt;img&gt; tags<br><br>
+                    
+                    <strong>5. Nesting Rules:</strong> Properly nest tags - close them in reverse order of opening.<br>
+                    ✅ Correct: &lt;div&gt;&lt;p&gt;Text&lt;/p&gt;&lt;/div&gt;<br>
+                    ❌ Wrong: &lt;div&gt;&lt;p&gt;Text&lt;/div&gt;&lt;/p&gt;
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 50px; padding: 30px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 10px; color: white;">
+            <h2 style="color: white;">🎉 Congratulations!</h2>
+            <p style="font-size: 1.1em; margin-top: 10px;">You now know all the major HTML tags! Practice by building simple web pages and experimenting with these tags. Happy coding! 💻</p>
+        </div>
+    </div>
+</body>
+</html>
